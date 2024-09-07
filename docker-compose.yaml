@@ -1,0 +1,13 @@
+services:
+  mysql:
+    container_name: 'mysqlcontainer2'
+    image: 'mysql:latest'
+    ports:
+      - 3312:3306
+    environment:
+      - 'MYSQL_DATABASE=R2DBCDatabase'
+      - 'MYSQL_PASSWORD=Numsey@Password!'
+      - 'MYSQL_ROOT_PASSWORD=Numsey@Password!!'
+      - 'MYSQL_USER=myuser'
+    volumes:
+      -  ./sqlscripts/init.sql:/docker-entrypoint-initdb.d/init.sql
